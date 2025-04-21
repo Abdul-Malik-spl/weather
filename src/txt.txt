@@ -1,0 +1,41 @@
+current
+: 
+{observation_time: '09:35 AM', temperature: 35, weather_code: 113, weather_icons: Array(1), weather_descriptions: Array(1), …}
+location
+: 
+country
+: 
+"India"
+lat
+: 
+"13.083"
+localtime
+: 
+"2025-04-21 15:05"
+localtime_epoch
+: 
+1745247900
+lon
+: 
+"80.283"
+name
+: 
+"Chennai"
+region
+: 
+"Tamil Nadu"
+timezone_id
+: 
+"Asia/Kolkata"
+utc_offset
+: 
+"5.50"
+[[Prototype]]
+: 
+Object
+request
+: 
+{type: 'City', query: 'Chennai, India', language: 'en', unit: 'm'}
+[[Prototype]]
+: 
+Object
