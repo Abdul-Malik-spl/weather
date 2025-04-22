@@ -14,23 +14,29 @@ let [cityName,setCityName]=useState("chennai")
 let [currentData,setCurrentData]=useState({})
 let [arrowshown,setArrowShown]=useState(0)
 
+
 useEffect(()=>{
   axios(`http://api.weatherstack.com/current?access_key=e0d0e6c7073ce9673f17fdf4466fec92&query=${cityName}`)
 .then((s)=>{setApiData(s.data)
 setArrowShown(s.data.current.wind_degree)
 })
-.catch(()=>alert("data not get from data base"))
+.catch((e)=>{alert(e.message) 
+  setCityName("chennai")})
 },[cityName])
 console.log(apiData)
 let searchinfo=()=>{
   setCityName(typecity)
+  setTypecity("")
+}
+let errorFun=(msg)=>{
+
 }
   return (
     <div className="App">
       {/* header-start */}
 <div className='weather-header p-3 '>
   <div className='inp-min'>
-    <input className='search-inp' placeholder='Search City' onChange={(e)=>setTypecity(e.target.value)}/><button className='btn text-light search-btn  btn-sm' onClick={searchinfo}>search</button>
+    <input className='search-inp' placeholder='Search City' onChange={(e)=>setTypecity(e.target.value)} value={typecity}/><button className='btn text-light search-btn  btn-sm' onClick={searchinfo}>search</button>
     </div>
 </div>
  {/* header-end */}
