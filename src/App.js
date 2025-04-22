@@ -16,8 +16,8 @@ let [arrowshown,setArrowShown]=useState(0)
 
 
 useEffect(()=>{
-  //   dcd5c3bb947a5e941306f3ee2602aba5
-  axios(`https://api.weatherstack.com/current?access_key=e0d0e6c7073ce9673f17fdf4466fec92&query=${cityName}`)
+  //   dcd5c3bb947a5e941306f3ee2602aba5 e0d0e6c7073ce9673f17fdf4466fec92
+  axios(`https://api.weatherstack.com/current?access_key=b7b65a8bc3496c9434708ba6649dc72b&query=${cityName}`)
 .then((s)=>{setApiData(s.data)
 setArrowShown(s.data.current.wind_degree)
 })
