@@ -16,6 +16,7 @@ let [arrowshown,setArrowShown]=useState(0)
 
 
 useEffect(()=>{
+  //   dcd5c3bb947a5e941306f3ee2602aba5
   axios(`https://api.weatherstack.com/current?access_key=e0d0e6c7073ce9673f17fdf4466fec92&query=${cityName}`)
 .then((s)=>{setApiData(s.data)
 setArrowShown(s.data.current.wind_degree)
@@ -43,7 +44,7 @@ let searchinfo=()=>{
  <div className='row row-gap-2'>
 <div className='col-12 col-md-6'>
   <div className='d-flex justify-content-center'>
-    <div className='border p-3 time-show ' style={{backgroundImage:apiData?.current?.is_day=='yes'?`url(${daypic})`:`url(${nightpic})`}}>
+    <div className='border p-3 time-show ' style={{backgroundImage:apiData?.current?.is_day=='yes'?`url(${daypic})`:apiData?.current?.is_day=='no'?`url(${nightpic})`:"rgba(255,255,255,.1)"}}>
     <h5>{apiData?.location?.name}</h5>
       <h2>{apiData?.location?.localtime?.slice(11)}</h2>
       <p>{apiData?.location?.localtime?.slice(0,11)}</p>
