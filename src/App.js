@@ -16,7 +16,7 @@ let [arrowshown,setArrowShown]=useState(0)
 
 
 useEffect(()=>{
-  axios(`http://api.weatherstack.com/current?access_key=e0d0e6c7073ce9673f17fdf4466fec92&query=${cityName}`)
+  axios(`https://api.weatherstack.com/current?access_key=e0d0e6c7073ce9673f17fdf4466fec92&query=${cityName}`)
 .then((s)=>{setApiData(s.data)
 setArrowShown(s.data.current.wind_degree)
 })
@@ -28,9 +28,7 @@ let searchinfo=()=>{
   setCityName(typecity)
   setTypecity("")
 }
-let errorFun=(msg)=>{
 
-}
   return (
     <div className="App">
       {/* header-start */}
